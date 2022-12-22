@@ -37,6 +37,8 @@ namespace MusicPlayerApp
         {
             panelSearch.Visible = false;
             panelPlayList.Visible = false;
+            button2.Visible = true;
+            button1.Visible = true;
         }
 
 
@@ -44,6 +46,8 @@ namespace MusicPlayerApp
         {
             panelSearch.Visible = true;
             panelPlayList.Visible = false;
+            button2.Visible = true;
+            button1.Visible = true;
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
@@ -70,7 +74,7 @@ namespace MusicPlayerApp
             Panel panel7 = new Panel();
             panel7.Location = new System.Drawing.Point(3, 3);
             panel7.Name = "pnl";
-            panel7.Size = new System.Drawing.Size(1047, 114);
+            panel7.Size = new System.Drawing.Size(840, 100);
             panel7.Cursor = System.Windows.Forms.Cursors.Hand;
             panel7.TabIndex = 0;
             panel7.BorderStyle = BorderStyle.FixedSingle;
@@ -126,11 +130,11 @@ namespace MusicPlayerApp
             panel7.Controls.Add(label13);
             panel7.Controls.Add(label14);
             panel7.Click+= (sender, e) => Onclick(this, e, data, tmp);
-            pictureBox6.Location = new System.Drawing.Point(17, 19);
+            pictureBox6.Location = new System.Drawing.Point(10, 10);
             label12.Location = new System.Drawing.Point(141, 19);
             label11.Location = new System.Drawing.Point(142, 57);
-            label13.Location = new System.Drawing.Point(618, 48);
-            label14.Location = new System.Drawing.Point(900, 50);
+            label13.Location = new System.Drawing.Point(350, 48);
+            label14.Location = new System.Drawing.Point(760, 50);
             return panel7;
         }
         private void createEvent(DataRow data, int tmp)
@@ -157,7 +161,7 @@ namespace MusicPlayerApp
         {
             if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
-                p_bar.Maximum = (int)player.controls.currentItem.duration;
+                p_bar.Maximum = (int)player.controls.currentItem.duration-1;
                 p_bar.Value = (int)player.controls.currentPosition;
             }
             labelTimeCurrent.Text = player.controls.currentPositionString;
@@ -171,16 +175,19 @@ namespace MusicPlayerApp
             }
             if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
-                if (p_bar.Value >= p_bar.Maximum)
+                if (p_bar.Value == p_bar.Maximum)
                 {
                     if (Repeat_check != 1)
                     {
-                        if (IDSong.Count - 1 == currentIDSong) { currentIDSong = -1; }
-                        string sqlcmd = "SELECT * FROM dbo.INFO_SONG WHERE ID = " + IDSong[currentIDSong + 1].ToString();
+                        int tmp = 0;
+                        Random rnd = new Random();
+                        if (Shuffle_check == 1) { tmp = rnd.Next(0, IDSong.Count); }
+                        else { tmp = 1; }
+                        string sqlcmd = "SELECT * FROM dbo.INFO_SONG WHERE ID = " + IDSong[(currentIDSong + tmp) % (IDSong.Count)].ToString();
                         DataTable dt = provider.excuteQuery(sqlcmd);
                         DataRow dtR = dt.Rows[0];
                         createEvent(dtR, currentIDSong + 1);
-                        ;
+                        Repeat_check = 0;
                     }
                     else
                     {
@@ -325,6 +332,8 @@ namespace MusicPlayerApp
             panelSearch.Visible = false;
             panelPlayList.Visible = true;
             PlayList("LIST_LIKED");
+            button2.Visible = false;
+            button1.Visible = false;
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -393,18 +402,33 @@ namespace MusicPlayerApp
             panelPlayList.Visible = true;
             PlayList(data[1].ToString());
             list_name = data[1].ToString();
+            button1.Visible = true;
+            button2.Visible = true;
         }
 
         private void buttonShuffle_Click(object sender, EventArgs e)
         {
+            if (Shuffle_check == 1)
+            {
+                buttonShuffle.BackColor = Color.MediumSeaGreen;
+                Shuffle_check = 0;
+            }
             buttonShuffle.BackColor = Color.DarkGreen;
             Shuffle_check = 1;
         }
 
         private void buttonRepeat_Click(object sender, EventArgs e)
         {
-            buttonRepeat.BackColor = Color.DarkGreen;
-            Repeat_check = 1;
+            if (Repeat_check != 1)
+            {
+                buttonRepeat.BackColor = Color.DarkGreen;
+                Repeat_check = 1;
+            }
+            else
+            {
+                buttonRepeat.BackColor = Color.MediumSeaGreen;
+                Repeat_check = 0;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -416,7 +440,7 @@ namespace MusicPlayerApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sqlcmd = "DROP TABLE "+list_name;
+            string sqlcmd = "DROP TABLE ["+list_name+"]";
             provider.excuteNonquery(sqlcmd);
             sqlcmd = "DELETE FROM DS_LIST WHERE NAME_LIST ='" + list_name + "'";
             provider.excuteNonquery(sqlcmd);
@@ -431,6 +455,8 @@ namespace MusicPlayerApp
             panelSearch.Visible = false;
             panelPlayList.Visible = true;
             PlayList("RAP");
+            button2.Visible = false;
+            button1.Visible = false;
         }
         private void panel5_MouseClick(object sender, MouseEventArgs e)
         {
@@ -438,6 +464,8 @@ namespace MusicPlayerApp
             panelSearch.Visible = false;
             panelPlayList.Visible = true;
             PlayList("CHILL");
+            button2.Visible = false;
+            button1.Visible = false;
         }
         private void panel3_MouseClick(object sender, MouseEventArgs e)
         {
@@ -445,6 +473,13 @@ namespace MusicPlayerApp
             panelSearch.Visible = false;
             panelPlayList.Visible = true;
             PlayList("HOT_HIT");
+            button2.Visible = false;
+            button1.Visible = false;
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

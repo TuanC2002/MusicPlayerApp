@@ -429,9 +429,9 @@ namespace MusicPlayerApp
             // flowLayoutPanelList
             // 
             this.flowLayoutPanelList.AutoScroll = true;
-            this.flowLayoutPanelList.Location = new System.Drawing.Point(60, 214);
+            this.flowLayoutPanelList.Location = new System.Drawing.Point(30, 200);
             this.flowLayoutPanelList.Name = "flowLayoutPanelList";
-            this.flowLayoutPanelList.Size = new System.Drawing.Size(1050, 404);
+            this.flowLayoutPanelList.Size = new System.Drawing.Size(1173, 642);
             this.flowLayoutPanelList.TabIndex = 5;
             // 
             // radioButtonTopic
@@ -488,10 +488,10 @@ namespace MusicPlayerApp
             // labelNameSong
             // 
             this.labelNameSong.AutoSize = true;
-            this.labelNameSong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameSong.Location = new System.Drawing.Point(154, 12);
+            this.labelNameSong.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameSong.Location = new System.Drawing.Point(121, 19);
             this.labelNameSong.Name = "labelNameSong";
-            this.labelNameSong.Size = new System.Drawing.Size(138, 29);
+            this.labelNameSong.Size = new System.Drawing.Size(161, 32);
             this.labelNameSong.TabIndex = 1;
             this.labelNameSong.Text = "Songname";
             // 
@@ -499,7 +499,7 @@ namespace MusicPlayerApp
             // 
             this.labelArtist.AutoSize = true;
             this.labelArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelArtist.Location = new System.Drawing.Point(155, 50);
+            this.labelArtist.Location = new System.Drawing.Point(122, 60);
             this.labelArtist.Name = "labelArtist";
             this.labelArtist.Size = new System.Drawing.Size(55, 20);
             this.labelArtist.TabIndex = 2;
@@ -530,6 +530,7 @@ namespace MusicPlayerApp
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1532, 107);
             this.panel6.TabIndex = 7;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // buttonShuffle
             // 
@@ -537,9 +538,9 @@ namespace MusicPlayerApp
             this.buttonShuffle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonShuffle.FlatAppearance.BorderSize = 0;
             this.buttonShuffle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShuffle.Location = new System.Drawing.Point(508, 10);
+            this.buttonShuffle.Location = new System.Drawing.Point(635, 22);
             this.buttonShuffle.Name = "buttonShuffle";
-            this.buttonShuffle.Size = new System.Drawing.Size(38, 41);
+            this.buttonShuffle.Size = new System.Drawing.Size(40, 40);
             this.buttonShuffle.TabIndex = 19;
             this.buttonShuffle.UseVisualStyleBackColor = true;
             this.buttonShuffle.Click += new System.EventHandler(this.buttonShuffle_Click);
@@ -550,20 +551,20 @@ namespace MusicPlayerApp
             this.buttonRepeat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonRepeat.FlatAppearance.BorderSize = 0;
             this.buttonRepeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRepeat.Location = new System.Drawing.Point(787, 13);
+            this.buttonRepeat.Location = new System.Drawing.Point(911, 22);
             this.buttonRepeat.Name = "buttonRepeat";
-            this.buttonRepeat.Size = new System.Drawing.Size(43, 41);
+            this.buttonRepeat.Size = new System.Drawing.Size(40, 40);
             this.buttonRepeat.TabIndex = 18;
             this.buttonRepeat.UseVisualStyleBackColor = true;
             this.buttonRepeat.Click += new System.EventHandler(this.buttonRepeat_Click);
             // 
             // comboBoxList
             // 
-            this.comboBoxList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxList.FormattingEnabled = true;
-            this.comboBoxList.Location = new System.Drawing.Point(1090, 60);
+            this.comboBoxList.Location = new System.Drawing.Point(1375, 12);
             this.comboBoxList.Name = "comboBoxList";
-            this.comboBoxList.Size = new System.Drawing.Size(145, 30);
+            this.comboBoxList.Size = new System.Drawing.Size(145, 33);
             this.comboBoxList.TabIndex = 17;
             // 
             // buttonAdd
@@ -572,9 +573,9 @@ namespace MusicPlayerApp
             this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAdd.FlatAppearance.BorderSize = 0;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Location = new System.Drawing.Point(1013, 54);
+            this.buttonAdd.Location = new System.Drawing.Point(1323, 6);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(46, 45);
+            this.buttonAdd.Size = new System.Drawing.Size(45, 45);
             this.buttonAdd.TabIndex = 16;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
@@ -585,19 +586,19 @@ namespace MusicPlayerApp
             this.buttonLiked.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLiked.FlatAppearance.BorderSize = 0;
             this.buttonLiked.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLiked.Location = new System.Drawing.Point(1013, 3);
+            this.buttonLiked.Location = new System.Drawing.Point(1271, 6);
             this.buttonLiked.Name = "buttonLiked";
-            this.buttonLiked.Size = new System.Drawing.Size(46, 45);
+            this.buttonLiked.Size = new System.Drawing.Size(45, 45);
             this.buttonLiked.TabIndex = 15;
             this.buttonLiked.UseVisualStyleBackColor = true;
             this.buttonLiked.Click += new System.EventHandler(this.buttonLiked_Click);
             // 
             // trackBarVol
             // 
-            this.trackBarVol.Location = new System.Drawing.Point(1392, 43);
+            this.trackBarVol.Location = new System.Drawing.Point(1375, 68);
             this.trackBarVol.Maximum = 100;
             this.trackBarVol.Name = "trackBarVol";
-            this.trackBarVol.Size = new System.Drawing.Size(128, 56);
+            this.trackBarVol.Size = new System.Drawing.Size(154, 56);
             this.trackBarVol.TabIndex = 14;
             this.trackBarVol.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBarVol.Value = 50;
@@ -609,9 +610,9 @@ namespace MusicPlayerApp
             this.buttonVol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonVol.FlatAppearance.BorderSize = 0;
             this.buttonVol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVol.Location = new System.Drawing.Point(1337, 39);
+            this.buttonVol.Location = new System.Drawing.Point(1327, 59);
             this.buttonVol.Name = "buttonVol";
-            this.buttonVol.Size = new System.Drawing.Size(35, 33);
+            this.buttonVol.Size = new System.Drawing.Size(45, 45);
             this.buttonVol.TabIndex = 13;
             this.buttonVol.UseVisualStyleBackColor = true;
             this.buttonVol.Click += new System.EventHandler(this.buttonVol_Click);
@@ -620,7 +621,7 @@ namespace MusicPlayerApp
             // 
             this.labelTimeMax.AutoSize = true;
             this.labelTimeMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTimeMax.Location = new System.Drawing.Point(892, 50);
+            this.labelTimeMax.Location = new System.Drawing.Point(1001, 75);
             this.labelTimeMax.Name = "labelTimeMax";
             this.labelTimeMax.Size = new System.Drawing.Size(55, 20);
             this.labelTimeMax.TabIndex = 12;
@@ -630,7 +631,7 @@ namespace MusicPlayerApp
             // 
             this.labelTimeCurrent.AutoSize = true;
             this.labelTimeCurrent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTimeCurrent.Location = new System.Drawing.Point(393, 50);
+            this.labelTimeCurrent.Location = new System.Drawing.Point(502, 75);
             this.labelTimeCurrent.Name = "labelTimeCurrent";
             this.labelTimeCurrent.Size = new System.Drawing.Size(55, 20);
             this.labelTimeCurrent.TabIndex = 11;
@@ -638,7 +639,7 @@ namespace MusicPlayerApp
             // 
             // p_bar
             // 
-            this.p_bar.Location = new System.Drawing.Point(454, 60);
+            this.p_bar.Location = new System.Drawing.Point(563, 85);
             this.p_bar.Name = "p_bar";
             this.p_bar.Size = new System.Drawing.Size(432, 10);
             this.p_bar.TabIndex = 10;
@@ -650,9 +651,9 @@ namespace MusicPlayerApp
             this.buttonLyrics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLyrics.FlatAppearance.BorderSize = 0;
             this.buttonLyrics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLyrics.Location = new System.Drawing.Point(1337, 4);
+            this.buttonLyrics.Location = new System.Drawing.Point(1271, 57);
             this.buttonLyrics.Name = "buttonLyrics";
-            this.buttonLyrics.Size = new System.Drawing.Size(35, 33);
+            this.buttonLyrics.Size = new System.Drawing.Size(45, 45);
             this.buttonLyrics.TabIndex = 9;
             this.buttonLyrics.UseVisualStyleBackColor = true;
             this.buttonLyrics.Click += new System.EventHandler(this.buttonLyrics_Click);
@@ -663,9 +664,9 @@ namespace MusicPlayerApp
             this.buttonPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonPlay.FlatAppearance.BorderSize = 0;
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPlay.Location = new System.Drawing.Point(635, 4);
+            this.buttonPlay.Location = new System.Drawing.Point(750, 7);
             this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(72, 53);
+            this.buttonPlay.Size = new System.Drawing.Size(70, 70);
             this.buttonPlay.TabIndex = 6;
             this.buttonPlay.UseVisualStyleBackColor = true;
             this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
@@ -676,9 +677,9 @@ namespace MusicPlayerApp
             this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonBack.FlatAppearance.BorderSize = 0;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBack.Location = new System.Drawing.Point(562, 12);
+            this.buttonBack.Location = new System.Drawing.Point(689, 22);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(43, 36);
+            this.buttonBack.Size = new System.Drawing.Size(40, 40);
             this.buttonBack.TabIndex = 5;
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
@@ -689,9 +690,9 @@ namespace MusicPlayerApp
             this.buttonNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonNext.FlatAppearance.BorderSize = 0;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNext.Location = new System.Drawing.Point(713, 8);
+            this.buttonNext.Location = new System.Drawing.Point(840, 22);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(46, 45);
+            this.buttonNext.Size = new System.Drawing.Size(40, 40);
             this.buttonNext.TabIndex = 4;
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
@@ -702,7 +703,7 @@ namespace MusicPlayerApp
             this.pictureBoxMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxMusic.Location = new System.Drawing.Point(15, 12);
             this.pictureBoxMusic.Name = "pictureBoxMusic";
-            this.pictureBoxMusic.Size = new System.Drawing.Size(102, 76);
+            this.pictureBoxMusic.Size = new System.Drawing.Size(100, 80);
             this.pictureBoxMusic.TabIndex = 0;
             this.pictureBoxMusic.TabStop = false;
             // 
@@ -725,24 +726,26 @@ namespace MusicPlayerApp
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.PeachPuff;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(15, 10);
+            this.button2.Location = new System.Drawing.Point(774, 575);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(265, 46);
+            this.button2.Size = new System.Drawing.Size(183, 46);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Xoá danh sách phát";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "Xoá playlist";
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.GreenYellow;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(15, 575);
+            this.button1.Location = new System.Drawing.Point(964, 575);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(343, 46);
+            this.button1.Size = new System.Drawing.Size(197, 46);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Xoá khỏi danh sách phát";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Xoá bài hát";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // flowLayoutPanelSong
